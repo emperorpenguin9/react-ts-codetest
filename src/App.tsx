@@ -1,6 +1,7 @@
 import reactLogo from "./assets/react.svg";
 import methodLogo from "./assets/method.svg";
 import "./App.css";
+import Custom from "./components/Custom";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           coding!
         </p>
       </div>
+      <Custom />
     </>
   );
 }
