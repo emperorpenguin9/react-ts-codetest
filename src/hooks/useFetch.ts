@@ -1,19 +1,5 @@
 import { useEffect, useState } from "react";
-// import { DataType, Result } from "../types/type";
-
-type Result = {
-  loading: boolean;
-  data?: DataType;
-  error?: string;
-};
-
-type DataType = {
-  albumId: number;
-  id: number;
-  title: string;
-  url: string;
-  thumbnailUrl: string;
-};
+import { DataType, Result } from "../types/type";
 
 const useFetch = (url: string): Result => {
   const [data, setData] = useState<DataType>();
@@ -36,7 +22,6 @@ const useFetch = (url: string): Result => {
     };
     fetchData();
   }, []);
-
   return { loading, data, error };
 };
 

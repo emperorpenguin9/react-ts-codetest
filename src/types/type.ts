@@ -8,6 +8,6 @@ export type DataType = {
 
 export type Result = {
   loading: boolean;
-  data: DataType;
-  error: string;
+  data?: DataType;
+  error?: string;
 };
