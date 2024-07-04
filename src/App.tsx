@@ -1,9 +1,7 @@
 import reactLogo from "./assets/react.svg";
 import methodLogo from "./assets/method.svg";
 import "./App.css";
-import Custom from "./components/Custom";
 import useFetch from "./hooks/useFetch";
-import { Result } from "./types/type";
 
 const URL = "https://jsonplaceholder.typicode.com/photos/1";
 
@@ -33,7 +31,18 @@ function App() {
           coding!
         </p>
       </div>
-      <div>{data.data && data.data.title}</div>
+      <div>
+        {data.loading ? (
+          <div>Loading...</div>
+        ) : data.error ? (
+          <div>{data.error}</div>
+        ) : (
+          <div>
+            <h1>{data.data && data.data.title}</h1>
+            <img src={data.data?.url} alt={data.data?.title} />
+          </div>
+        )}
+      </div>
     </>
   );
 }
