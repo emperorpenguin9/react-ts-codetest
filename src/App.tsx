@@ -2,8 +2,13 @@ import reactLogo from "./assets/react.svg";
 import methodLogo from "./assets/method.svg";
 import "./App.css";
 import Custom from "./components/Custom";
+import useFetch from "./hooks/useFetch";
+import { Result } from "./types/type";
+
+const URL = "https://jsonplaceholder.typicode.com/photos/1";
 
 function App() {
+  const data = useFetch(URL);
   return (
     <>
       <div>
@@ -28,7 +33,7 @@ function App() {
           coding!
         </p>
       </div>
-      <Custom />
+      <div>{data.data && data.data.title}</div>
     </>
   );
 }
